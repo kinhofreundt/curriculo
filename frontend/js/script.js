@@ -10,7 +10,7 @@ function fecharModal() {
 
 function GET() {
     $.ajax({
-        url: 'http://127.0.0.1:3071/premiacoes',
+        url: 'https://erik-freundt-curriculo.herokuapp.com/premiacoes',
         type: 'GET',
         success: data => {
             var lista = '';
@@ -32,7 +32,7 @@ function INSERIR() {
     var premiacao = document.getElementById("premio").value;
     $.ajax({
         type: 'POST',
-        url: 'http://127.0.0.1:3071/inserir',
+        url: 'https://erik-freundt-curriculo.herokuapp.com/inserir',
         data: { premiacao: premiacao },
     }).done(function () {
         closeTextarea();
@@ -49,7 +49,7 @@ function DELETE(id) {
     if (confirm('Confirma a exclusão?')) {
         $.ajax({
             type: 'POST',
-            url: 'http://127.0.0.1:3071/delete',
+            url: 'https://erik-freundt-curriculo.herokuapp.com/delete',
             data: { id: id },
         }).done(function () {
             GET();
@@ -65,7 +65,7 @@ function UPDATE() {
     var premiacao = document.getElementById("premioUpdate").value;
     $.ajax({
         type: 'POST',
-        url: 'http://127.0.0.1:3071/update',
+        url: 'https://erik-freundt-curriculo.herokuapp.com/update',
         data: { premiacao: premiacao, id: id },
     }).done(function () {
         GET();
